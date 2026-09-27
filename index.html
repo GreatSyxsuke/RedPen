@@ -239,14 +239,14 @@
 <div class="modal-back" id="saveModal">
   <div class="modal">
     <button class="close" id="modalClose" title="Close">✕</button>
-    <h3>Save RedPen as its own app</h3>
-    <p>To edit real PDFs, RedPen needs to run as its own file — outside this preview, which blocks the PDF engine and file downloads. Two ways to get it out:</p>
+    <h3>Save your own copy of RedPen</h3>
+    <p>Grab the whole app as a single HTML file — to run it offline, customize it, or host your own copy. Two ways:</p>
 
     <div class="row">
       <button class="primary" id="dlBtn">⬇ Try direct download</button>
       <button id="openTabBtn">↗ Open in a new tab</button>
     </div>
-    <p style="font-size:13px">If the download works, it lands in your <b>Downloads</b> folder as <b>redpen-pdf-editor.html</b> — double-click it to run. If nothing happens, this preview blocked it; use the copy method below.</p>
+    <p style="font-size:13px">If the download works, it lands in your <b>Downloads</b> folder as <b>redpen-pdf-editor.html</b> — double-click it to run. If nothing happens, your browser blocked the automatic download; use the copy method below.</p>
 
     <div class="divider">always works — copy &amp; paste</div>
     <ol>
@@ -277,9 +277,8 @@ if (LIBS_OK) {
     'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 } else {
   banner.classList.add('show');
-  banner.innerHTML = '<b>The PDF engine didn’t load.</b> This is expected inside a live preview, which blocks outside code. ' +
-    'Click <b>💾 Save this app</b> above, then open the downloaded file in your browser (or host it on GitHub Pages). ' +
-    'It works fully once it’s running on its own.';
+  banner.innerHTML = '<b>The PDF engine didn’t load.</b> RedPen fetches its PDF libraries the first time it runs, so it needs an internet connection — check your connection and reload. ' +
+    '(If you’re viewing this inside an embedded preview that blocks outside code, click <b>💾 Save this app</b> and open the file directly in your browser.)';
 }
 
 let state = { pages: [], scale: 1.2, bytes: null, addMode: false };
